@@ -2,7 +2,7 @@
 
 Repository containing the unit test and methods for developing a calculator
 
-### Content
+### :star:Content 
 
 This repository has three solution projects
 
@@ -14,21 +14,22 @@ This repository has three solution projects
 
 This is a C# .NET Core Class Library project that contains the following methods
 
-1. add()
-2. subtract()
-3. product()
-4. divide()
-5. modulus
+> 1. add()
+>
+> 2. subtract()
+> 3. product()
+> 4. divide()
+> 5. modulus
 
 #### Calculator Test
 
 This is a C# .NET Core Unit Test project that contains the following methods
 
-1. GivenTwoNumbers_ReturnsTheAddition()
-2. GivenTwoNumbers_ReturnsTheSubtraction()
-3. GivenTwoNumbers_ReturnsTheProduct()
-4. GivenTwoNumbers_ReturnsTheDivision()
-5. GivenTwoNumbers_ReturnsTheModulus()
+> 1. GivenTwoNumbers_ReturnsTheAddition()
+> 2. GivenTwoNumbers_ReturnsTheSubtraction()
+> 3. GivenTwoNumbers_ReturnsTheProduct()
+> 4. GivenTwoNumbers_ReturnsTheDivision()
+> 5. GivenTwoNumbers_ReturnsTheModulus()
 
 #### Examples
 
