@@ -37,6 +37,24 @@ namespace CalculatorTests
             var productResult = StaticCalculator.product(num1, num2);
             Assert.AreEqual(productResult, knownResult);
         }
-
+        [TestCase(10, 10, 1)]
+        [TestCase(-10, -10, 1)]
+        [TestCase(10, -10, -1)]
+        [TestCase(-0, -235.54, 0)]
+        [TestCase(-100, 0, -99999)] 
+        public void GivenTwoNumbers_ReturnsTheDivision(double num1, double num2, double knownResult)
+        {
+            var divisionResult = StaticCalculator.divide(num1, num2);
+            Assert.AreEqual(divisionResult, knownResult);
+        }
+        [TestCase(1, 10, 1)]
+        [TestCase(1, 0, -99999)]
+        [TestCase(1, -4, 1)]
+        [TestCase(3.3, 9.9, 3.3)]
+        public void GivenTwoNumbers_ReturnsTheModulus(double num1, double num2, double knownResult)
+        {
+            var modulusResult = StaticCalculator.modulus(num1, num2);
+            Assert.AreEqual(modulusResult, knownResult);
+        }
     }
 }

@@ -20,6 +20,22 @@ namespace CalculatorLib
         {
             return Math.Round((num1 * num2), 5);
         }
+        public static double divide(double num1, double num2)
+        {
+            if (num2==0)
+            {
+                return -99999;
+            }
+            return Math.Round((num1 / num2), 5);
+        }
+        public static double modulus(double num1, double num2)
+        {
+            if (num2 == 0)
+            {
+                return -99999;
+            }
+            return Math.Round((num1 % num2), 5);
+        }
 
     }
 }
