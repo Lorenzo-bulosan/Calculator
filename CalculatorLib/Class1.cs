@@ -38,6 +38,14 @@ namespace CalculatorLib
             }
             return Math.Round((num1 % num2), 5);
         }
+        // method that evaluates a string mathematical expresion
+        public static double evaluateExpresion(string mathExpresion)
+        {
+
+            // separate expresion
+
+            return 0.0;
+        }
 
     }
 }
