@@ -43,7 +43,7 @@
         </Grid.RowDefinitions>
 
         <!-- Operators buttons -->
-        <Button x:Name="btnAC" Style="{StaticResource Operators}" Content="AC" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="bntHandlerAC"></Button>
+        <Button x:Name="btnEquals" Style="{StaticResource Operators}" Content="=" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerEquals"></Button>
         <Button x:Name="btnOperatorDivision" Style="{StaticResource Operators}" Content="/" Grid.Column="2" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerDivision"></Button>
         <Button x:Name="btnOperatorMultiply" Style="{StaticResource Operators}" Content="*" Grid.Column="3" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerMultiply"></Button>
         <Button x:Name="btnOperatorAdd" Style="{StaticResource Operators}" Content="+" Grid.Column="3" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerAdd"></Button>

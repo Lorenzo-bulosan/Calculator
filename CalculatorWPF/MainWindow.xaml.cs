@@ -28,36 +28,47 @@ namespace CalculatorWPF
             InitializeComponent();
         }
 
-        // AC and .
+        // = and .
 
-        private void bntHandlerAC(object sender, RoutedEventArgs e)
+        private void btnHandlerEquals(object sender, RoutedEventArgs e)
         {
+            // get and evaluate string
+            string mathematicalExpression = MathematicalExpressionScreen.Content.ToString();
+            double result = StaticCalculator.evaluateMathString(mathematicalExpression);
+            ResultsScreen.Content = result;
 
+            // reset screen
+            MathematicalExpressionScreen.Content = "";
         }
         private void btnHandlerDecimal(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '.';
         }
 
         // Operators + - * /
         private void btnHandlerDivision(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '/';
         }
 
         private void btnHandlerMultiply(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '*';
         }
 
         private void btnHandlerAdd(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '+';
         }
 
         private void btnHandlerSubtract(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '-';
         }
 
         // Numbers 0-9
@@ -121,7 +132,8 @@ namespace CalculatorWPF
             string currentExpression = MathematicalExpressionScreen.Content.ToString();
             MathematicalExpressionScreen.Content = currentExpression + '8';
         }
-       
+
+
 
         //private void btnEnterHandler(object sender, RoutedEventArgs e)
         //{
