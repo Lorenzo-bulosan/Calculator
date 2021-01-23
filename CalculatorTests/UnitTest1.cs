@@ -56,5 +56,14 @@ namespace CalculatorTests
             var modulusResult = StaticCalculator.modulus(num1, num2);
             Assert.AreEqual(modulusResult, knownResult);
         }
+
+        [TestCase("2*6+5.777", 17.777)]
+        [TestCase("2*2", 4.0)]
+        [TestCase("5/2.5-100", -98.0)]
+        public void GivenAString_EvaluateTheMathematicalExpression(string mathExp, double knownResult)
+        {
+            var evaluateResult = StaticCalculator.evaluateMathString(mathExp);
+            Assert.AreEqual(evaluateResult, knownResult);
+        }
     }
 }

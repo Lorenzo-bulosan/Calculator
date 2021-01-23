@@ -17,106 +17,86 @@ namespace DebuggingMethods
             //Console.WriteLine($"should be: {num1%num2} and got {mod}");
 
             //evaluateExpresion("12+2.2");
-            double x = Calculate("12+23.212");
-            Console.WriteLine(x);
+            evaluateMathString("2*6+5.777");
+            
         }
 
-        public static double evaluateExpresion(string mathExpresion)
+
+        public static double evaluateMathString(string mathExpresion)
         {
+            // create stack to hold numbers to add
+            Stack<double> stackToAdd = new Stack<double>();
 
-            string currentNumber = "";
-            bool isANumber;
-            char currentChar;
+            // initialise variables
             char endOfExpresion = '#';
+            char operation = '+';
+            double num = 0;
+            char currentChar;
+            string currentNumberChar = "";
+            double result;
 
-            Stack<string> stackOfNumbersToAdd = new Stack<string>();
-
-            // custom end
+            // custom end to detect end of expression
             mathExpresion = $"{mathExpresion}{endOfExpresion}";
 
+            // go through the expression O(n)
             for (int i = 0; i < mathExpresion.Length; i++)
             {
+
                 currentChar = mathExpresion[i];
-                isANumber = Char.IsDigit(currentChar);
 
-                // get numbers between operators i.e 12.7
-                if (isANumber || currentChar == '.')
+                // create floating numbers characters
+                if (Char.IsDigit(currentChar) || currentChar == '.')
                 {
-                    currentNumber += currentChar;
-                }
-                // handle operators + - x / and the end of the string if not skips last number
-                else if (!isANumber || currentChar == endOfExpresion)
-                {
-                    Console.WriteLine($"Pushing {currentNumber} into stack");
-                    stackOfNumbersToAdd.Push(currentNumber);
-
-                    // handle specific operations
-
-
-                    // reset number after each operation
-                    currentNumber = "";
+                    currentNumberChar += currentChar;
                 }
 
-            }
-
-            return 0.0;
-        }
-
-
-        public static int Calculate(string s)
-        {
-            s = s.Trim();
-            Stack<int> operands = new Stack<int>();
-            char operation = '+';
-            int num = 0;
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == ' ')
+                // if it is not digit (x / + -) or it is last character in the string (custom '#')
+                else if (!Char.IsDigit(currentChar) || currentChar == endOfExpresion)
                 {
-                    continue;
-                }
 
-                if (s[i] >= '0' && s[i] <= '9' || s[i]=='.')
-                {
-                    num = num * 10 + (s[i] - '0');
-                }
+                    // convert char to double
+                    num = Convert.ToDouble(currentNumberChar);
 
-                // if it is not digit or it is last character in the string
-                if (!(s[i] >= '0' && s[i] <= '9') || i == s.Length - 1)
-                {
+                    // apply operations for x / and change sign for -
+                    // add to stack in form Stack = [x1 + x2 + x3 + ...] => e.g[12.0, -23.33, 3*4.1 ... etc]
                     switch (operation)
                     {
                         case '*':
-                            operands.Push(operands.Pop() * num);
+                            result = StaticCalculator.product( stackToAdd.Pop() , num);
+                            stackToAdd.Push(result);
                             break;
                         case '/':
-                            operands.Push(operands.Pop() / num);
+                            result = StaticCalculator.divide(stackToAdd.Pop(), num);
+                            stackToAdd.Push(result);
                             break;
                         case '-':
-                            operands.Push(num * (-1));
+                            result = StaticCalculator.product(num, -1);
+                            stackToAdd.Push(result);
                             break;
-                        default:
-                            operands.Push(num);
+                        case '+':
+                            stackToAdd.Push(num);
                             break;
                     }
 
+                    // reset variables
                     num = 0;
+                    currentNumberChar = "";
+                    operation = currentChar;
                 }
-
-                if ((s[i] == '+') || (s[i] == '-') || (s[i] == '*') || (s[i] == '/'))
-                {
-                    operation = s[i];
-                }
-
             }
 
-            int sum = 0;
+            // add all numbers in the stack
+            double sum = 0;
+            double numToAdd;
 
-            while (operands.Count > 0)
+            while (stackToAdd.Count > 0)
             {
-                sum += operands.Pop();
+                numToAdd = stackToAdd.Pop();
+                Console.WriteLine($"adding {numToAdd} to {sum}");
+                sum = StaticCalculator.add(sum, numToAdd);
             }
+
+            Console.WriteLine($"Final result: {sum}");
 
             return sum;
         }
