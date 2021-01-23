@@ -32,11 +32,21 @@ namespace CalculatorWPF
 
         private void btnHandlerEquals(object sender, RoutedEventArgs e)
         {
-            // get and evaluate string
+            // get math expresion
             string mathematicalExpression = MathematicalExpressionScreen.Content.ToString();
-            double result = StaticCalculator.evaluateMathString(mathematicalExpression);
-            ResultsScreen.Content = result;
 
+            // try to evaluate
+            try
+            {
+                double result = StaticCalculator.evaluateMathString(mathematicalExpression);
+                ResultsScreen.Content = result;
+            }
+            catch (Exception ex)
+            {
+                ResultsScreen.Content = "Error";
+                MessageBox.Show(ex.Message);
+            }
+            
             // reset screen
             MathematicalExpressionScreen.Content = "";
         }
