@@ -62,7 +62,7 @@
         <Button x:Name="btnNumber8" Content="8" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber8"></Button>
         <Button x:Name="btnNumber9" Content="9" Grid.Column="2" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber9"></Button>
 
-        <Label x:Name="MathematicalExpressionScreen" Content="1*4+123-12/5" HorizontalAlignment="Left" VerticalAlignment="Top" 
+        <Label x:Name="MathematicalExpressionScreen" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" 
                Grid.ColumnSpan="3"  Grid.RowSpan="1" 
                Background="White" Height="76" Width="679" 
                FontSize="36" FontFamily="Arial Black"/>

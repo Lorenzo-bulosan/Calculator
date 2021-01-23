@@ -60,58 +60,67 @@ namespace CalculatorWPF
 
         }
 
-        // Numbers 1-9
+        // Numbers 0-9
+
+        private void btnHandlerNumber0(object sender, RoutedEventArgs e)
+        {
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '0';
+        }
 
         private void btnHandlerNumber1(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '1';
         }
 
         private void btnHandlerNumber2(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '2';
         }
 
         private void btnHandlerNumber3(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '3';
         }
 
         private void btnHandlerNumber4(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '4';
         }
 
         private void btnHandlerNumber5(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '5';
         }
 
         private void btnHandlerNumber6(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '6';
         }
 
         private void btnHandlerNumber7(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '7';
         }
 
         private void btnHandlerNumber8(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '8';
         }
 
         private void btnHandlerNumber9(object sender, RoutedEventArgs e)
         {
-
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '8';
         }
-
-        private void btnHandlerNumber0(object sender, RoutedEventArgs e)
-        {
-
-        }
-
        
 
         //private void btnEnterHandler(object sender, RoutedEventArgs e)
