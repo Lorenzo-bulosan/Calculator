@@ -28,34 +28,6 @@ namespace CalculatorWPF
             InitializeComponent();
         }
 
-        // = and .
-
-        private void btnHandlerEquals(object sender, RoutedEventArgs e)
-        {
-            // get math expresion
-            string mathematicalExpression = MathematicalExpressionScreen.Content.ToString();
-
-            // try to evaluate
-            try
-            {
-                double result = StaticCalculator.evaluateMathString(mathematicalExpression);
-                ResultsScreen.Content = result;
-            }
-            catch (Exception ex)
-            {
-                ResultsScreen.Content = "Error";
-                MessageBox.Show(ex.Message);
-            }
-            
-            // reset screen
-            MathematicalExpressionScreen.Content = "";
-        }
-        private void btnHandlerDecimal(object sender, RoutedEventArgs e)
-        {
-            string currentExpression = MathematicalExpressionScreen.Content.ToString();
-            MathematicalExpressionScreen.Content = currentExpression + '.';
-        }
-
         // Operators + - * /
         private void btnHandlerDivision(object sender, RoutedEventArgs e)
         {
@@ -79,6 +51,12 @@ namespace CalculatorWPF
         {
             string currentExpression = MathematicalExpressionScreen.Content.ToString();
             MathematicalExpressionScreen.Content = currentExpression + '-';
+        }
+
+        private void btnHandlerDecimal(object sender, RoutedEventArgs e)
+        {
+            string currentExpression = MathematicalExpressionScreen.Content.ToString();
+            MathematicalExpressionScreen.Content = currentExpression + '.';
         }
 
         // Numbers 0-9
@@ -140,10 +118,30 @@ namespace CalculatorWPF
         private void btnHandlerNumber9(object sender, RoutedEventArgs e)
         {
             string currentExpression = MathematicalExpressionScreen.Content.ToString();
-            MathematicalExpressionScreen.Content = currentExpression + '8';
+            MathematicalExpressionScreen.Content = currentExpression + '9';
         }
 
+        // evaluating the expresion given a string
+        private void btnHandlerEquals(object sender, RoutedEventArgs e)
+        {
+            // get math expresion
+            string mathematicalExpression = MathematicalExpressionScreen.Content.ToString();
 
+            // try to evaluate
+            try
+            {
+                double result = StaticCalculator.evaluateMathString(mathematicalExpression);
+                ResultsScreen.Content = result;
+            }
+            catch (Exception ex)
+            {
+                ResultsScreen.Content = "Error";
+                MessageBox.Show(ex.Message);
+            }
+
+            // reset screen
+            MathematicalExpressionScreen.Content = "";
+        }
 
         //private void btnEnterHandler(object sender, RoutedEventArgs e)
         //{
