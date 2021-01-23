@@ -28,10 +28,91 @@ namespace CalculatorWPF
             InitializeComponent();
         }
 
- 
+        // AC and .
 
+        private void bntHandlerAC(object sender, RoutedEventArgs e)
+        {
 
+        }
+        private void btnHandlerDecimal(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        // Operators + - * /
+        private void btnHandlerDivision(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerMultiply(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerAdd(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerSubtract(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Numbers 1-9
+
+        private void btnHandlerNumber1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber7(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber8(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber9(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHandlerNumber0(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
 
         //private void btnEnterHandler(object sender, RoutedEventArgs e)
         //{

@@ -43,27 +43,24 @@
         </Grid.RowDefinitions>
 
         <!-- Operators buttons -->
-        <Button Style="{StaticResource Operators}" Content="DEL" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="AC" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="/" Grid.Column="2" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="*" Grid.Column="3" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="+" Grid.Column="3" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="-" Grid.Column="3" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button Style="{StaticResource Operators}" Content="." Grid.Column="3" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1"></Button>
+        <Button x:Name="btnAC" Style="{StaticResource Operators}" Content="AC" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="bntHandlerAC"></Button>
+        <Button x:Name="btnOperatorDivision" Style="{StaticResource Operators}" Content="/" Grid.Column="2" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerDivision"></Button>
+        <Button x:Name="btnOperatorMultiply" Style="{StaticResource Operators}" Content="*" Grid.Column="3" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerMultiply"></Button>
+        <Button x:Name="btnOperatorAdd" Style="{StaticResource Operators}" Content="+" Grid.Column="3" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerAdd"></Button>
+        <Button x:Name="btnOperatorSubtract" Style="{StaticResource Operators}" Content="-" Grid.Column="3" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerSubtract"></Button>
+        <Button x:Name="btnNumberDecimal" Style="{StaticResource Operators}" Content="." Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerDecimal"></Button>
 
         <!-- Number pad-->
-        <Button x:Name="btnNumber1" Content="1" Grid.Column="0" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber2" Content="2" Grid.Column="1" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="bntNumber3" Content="3" Grid.Column="2" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber4" Content="4" Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber5" Content="5" Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber6" Content="6" Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber7" Content="7" Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber8" Content="8" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1"></Button>
-        <Button x:Name="btnNumber9" Content="9" Grid.Column="2" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1"></Button>
-
-
-
+        <Button x:Name="btnNumber0" Style="{StaticResource Operators}" Content="0" Grid.Column="3" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber0"></Button>
+        <Button x:Name="btnNumber1" Content="1" Grid.Column="0" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber1"></Button>
+        <Button x:Name="btnNumber2" Content="2" Grid.Column="1" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber2"></Button>
+        <Button x:Name="bntNumber3" Content="3" Grid.Column="2" Grid.Row="4" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber3"></Button>
+        <Button x:Name="btnNumber4" Content="4" Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber4"></Button>
+        <Button x:Name="btnNumber5" Content="5" Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber5"></Button>
+        <Button x:Name="btnNumber6" Content="6" Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber6"></Button>
+        <Button x:Name="btnNumber7" Content="7" Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber7"></Button>
+        <Button x:Name="btnNumber8" Content="8" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber8"></Button>
+        <Button x:Name="btnNumber9" Content="9" Grid.Column="2" Grid.Row="2" Margin="0,0,0,0" BorderThickness="1" Click="btnHandlerNumber9"></Button>
 
         <Label x:Name="MathematicalExpressionScreen" Content="1*4+123-12/5" HorizontalAlignment="Left" VerticalAlignment="Top" 
                Grid.ColumnSpan="3"  Grid.RowSpan="1" 
