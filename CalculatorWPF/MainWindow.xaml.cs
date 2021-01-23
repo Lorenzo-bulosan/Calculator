@@ -28,30 +28,22 @@ namespace CalculatorWPF
             InitializeComponent();
         }
 
-        private void ResultsScreen_TextHandler(object sender, TextChangedEventArgs e)
-        {
-            ResultsScreenTwo.Content = $"{ResultsScreen.Text}";
-        }
+ 
 
-        private void btnHandler_7(object sender, RoutedEventArgs e)
-        {
-            ResultsScreenTwo.Content += "7";
-        }
 
-        private void btnHandler_8(object sender, RoutedEventArgs e)
-        {
-            ResultsScreenTwo.Content += "8";
-        }
 
-        private void btnEnterHandler(object sender, RoutedEventArgs e)
-        {
-            string message = ResultsScreenTwo.Content.ToString();
-            MessageBox.Show(message);
-        }
 
-        private void btnAddHandler(object sender, RoutedEventArgs e)
-        {
+        //private void btnEnterHandler(object sender, RoutedEventArgs e)
+        //{
+        //    string mathematicalExpression = ResultsScreenTwo.Content.ToString();
+        //    double result = StaticCalculator.evaluateMathString(mathematicalExpression); 
+        //    MessageBox.Show($"{mathematicalExpression} = {result}");
+        //}
+        //private void ResultsScreen_TextHandler(object sender, TextChangedEventArgs e)
+        //{
+        //    ResultsScreenTwo.Content = $"{ResultsScreen.Text}";
+        //}
 
-        }
+
     }
 }

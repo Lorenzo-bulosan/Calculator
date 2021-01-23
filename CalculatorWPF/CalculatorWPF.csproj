@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Monokayu1-Transparent.png" />
+    <None Remove="Monokayu1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CalculatorLib\CalculatorLib.csproj" />
     <ProjectReference Include="..\CalculatorTests\CalculatorTests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Monokayu1-Transparent.png" />
+    <Resource Include="Monokayu1.jpg" />
   </ItemGroup>
 
 </Project>
