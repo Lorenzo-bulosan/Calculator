@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using CalculatorLib;
 
 namespace CalculatorTests
@@ -40,12 +41,16 @@ namespace CalculatorTests
         [TestCase(10, 10, 1)]
         [TestCase(-10, -10, 1)]
         [TestCase(10, -10, -1)]
-        [TestCase(-0, -235.54, 0)]
-        [TestCase(-100, 0, -99999)] 
+        [TestCase(-0, -235.54, 0)] 
         public void GivenTwoNumbers_ReturnsTheDivision(double num1, double num2, double knownResult)
         {
             var divisionResult = StaticCalculator.divide(num1, num2);
             Assert.AreEqual(divisionResult, knownResult);
+        }
+        [TestCase(5.0, 0)]
+        public void GivenAParameterToDivideByZero_ReturnsAnException(double num1, double num2)
+        {
+            var ex = Assert.Throws<DivideByZeroException>(() => StaticCalculator.divide(num1, num2));
         }
         [TestCase(1, 10, 1)]
         [TestCase(1, 0, -99999)]
