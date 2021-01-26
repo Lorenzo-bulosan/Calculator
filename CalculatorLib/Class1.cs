@@ -51,8 +51,14 @@ namespace CalculatorLib
             string currentNumberChar = "";
             double result;
 
+            // edge case: starts with negative number
+            //if (mathExpression[0]=='-')
+            //{
+            mathExpression = formatExpression(mathExpression, endOfExpresion);
+            //}
+
             // custom end to detect end of expression
-            mathExpression = $"{mathExpression}{endOfExpresion}";
+            //mathExpression = $"{mathExpression}{endOfExpresion}";
 
             // go through the expression O(n)
             for (int i = 0; i < mathExpression.Length; i++)
@@ -117,5 +123,33 @@ namespace CalculatorLib
             return sum;
         }
 
+        // method that takes in a expresion with a leading '-'
+        // and returns and equivalent expresion without the leading 0
+        public static string formatExpression(string expression, char endOfExpression)
+        {
+
+            // handle expression with leading '-'
+            // by appending a expression to the original to maintain equality
+            if(expression[0]=='-')
+            {
+                // removes leading '-'
+                expression = expression.Remove(0, 1);
+
+                string expressionToMaintainEquality = "";
+
+                foreach (char character in expression)
+                {
+                    // when you see + or - stop and add to the end
+                    if (character == '+' || character == '-') { break; }
+
+                    // build expresion to append at the end
+                    expressionToMaintainEquality += character;
+                }
+                // maintain inequality
+                expression += $"-{2}*{expressionToMaintainEquality}";
+            }
+            
+            return expression+endOfExpression;
+        }
     }
 }
