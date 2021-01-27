@@ -52,13 +52,7 @@ namespace CalculatorLib
             double result;
 
             // edge case: starts with negative number
-            //if (mathExpression[0]=='-')
-            //{
             mathExpression = formatExpression(mathExpression, endOfExpresion);
-            //}
-
-            // custom end to detect end of expression
-            //mathExpression = $"{mathExpression}{endOfExpresion}";
 
             // go through the expression O(n)
             for (int i = 0; i < mathExpression.Length; i++)
@@ -123,8 +117,11 @@ namespace CalculatorLib
             return sum;
         }
 
+
+
         // method that takes in a expresion with a leading '-'
-        // and returns and equivalent expresion without the leading 0
+        // and returns and equivalent expresion in the format that the evaluate function can operate
+        // e.g -2+3/34 = 2+3/34-2-2
         public static string formatExpression(string expression, char endOfExpression)
         {
 
