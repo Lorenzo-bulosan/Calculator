@@ -1,6 +1,6 @@
 # Description
 
-Repository containing the unit test and methods for developing a calculator
+Repository containing the UI, unit test and methods for developing a calculator, you can build this and will produce a .exe windows application that can be run in your computer or any desktop
 
 ### :star:Content 
 
